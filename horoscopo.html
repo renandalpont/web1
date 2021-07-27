@@ -1,0 +1,138 @@
+<html>
+
+<head>
+  <style>
+    * {
+      font-family: 'Trebuchet MS', sans-serif;
+      font-weight: 150;
+    }
+
+    body {
+      background-color: #D6531E;
+    }
+
+    .container {
+      margin: 0 auto;
+      width: 50%;
+      background: red;
+      margin-top: 40px;
+      height: 90%;
+      border-radius: 8px;
+    }
+
+    h1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    div :nth-child(1) {
+      margin: 0 auto;
+      width: 70%;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    div :nth-child(2) {
+      margin: 0 auto;
+      width: 50%;
+    }
+
+    div :nth-child(3) {
+      margin: 0 auto;
+      width: 50%;
+      margin-top: 1px;
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    p {
+      padding: 10px;
+    }
+
+    button {
+      float: left;
+      background: #D6531E;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      text-decoration: none;
+      padding: 8px;
+      display: block;
+      margin: 10px;
+      text-align: center;
+      margin-left: 245px;
+      margin: 40px 64px 170px;
+      font-size: 15px;
+    }
+
+    input {
+      border-radius: 8px;
+    }
+  </style>
+  <script>
+    function horoscopo() {
+      //  data = document.getElementById(button).value;
+      var data = document.getElementById("horoscopoData").value;
+      var div = document.getElementById("resultado");
+      const dataSplit = data.split('-');
+
+      const year = dataSplit[0]; // 2019
+      const month = dataSplit[1]; // 04
+      const day = dataSplit[2]; // 15
+
+      if (month + day >= "0321" && month + day <= "0420") {
+        var signo = "aries";
+        div.innerHTML = "<h1> ÁRIES</h1>";
+      } else if (month + day >= "0421" && month + day <= "0520") {
+        div.innerHTML = "<h1> TOURO </h1>";
+      } else if (month + day >= "0521" && month + day <= "0620") {
+        div.innerHTML = "<h1> GÊMEOS </h1>";
+      } else if (month + day >= "0621" && month + day <= "0722") {
+        div.innerHTML = "<h1> CÂNCER </h1>";
+      } else if (month + day >= "0723" && month + day <= "0822") {
+        div.innerHTML = "<h1> LEÃO </h1>";
+      } else if (month + day >= "0823" && month + day <= "0922") {
+        div.innerHTML = "<h1> VIRGEM </h1>";
+      } else if (month + day >= "0923" && month + day <= "1022") {
+        div.innerHTML = "<h1> LIBRA </h1>";
+      } else if (month + day >= "1023" && month + day <= "1121") {
+        div.innerHTML = "<h1> ESCORPIÃO </h1>";
+      } else if (month + day >= "1122" && month + day <= "1221") {
+        div.innerHTML = "<h1> SAGITÁRIO </h1>";
+      } else if (month + day >= "1222" && month + day <= "0120") {
+        div.innerHTML = "<h1> CAPRICÓRNIO </h1>";
+      } else if (month + day >= "0121" && month + day <= "0218") {
+        div.innerHTML = "<h1> AQUÁRIO </h1>";
+      } else if (month + day >= "0219" && month + day <= "0320") {
+        div.innerHTML = "<h1> PEIXES </h1>";
+      }
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Descubra o horoscopo do seu pet</h1>
+    <div><input id="horoscopoData" name="horoscopo" type="date"></div>
+
+    <div><button id="botao" onclick="horoscopo()">Descobrir</button></div>
+
+    <div id="resultado">
+      <h3 id="resultado"> </h3>
+    </div>
+
+
+  </div>
+</body>
+
+</html>
